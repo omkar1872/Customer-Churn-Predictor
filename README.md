@@ -1,69 +1,74 @@
-# 🔍 Customer Churn Prediction Using Random Forest
+# 🔍 Customer Churn Prediction Using Random Forest (Web App)
 
-This project uses a machine learning approach to predict **customer churn** — that is, whether a customer will stop using a company's services. A **Random Forest Classifier** is used due to its strong performance on classification tasks and ability to handle both categorical and numerical data.
+This project predicts **customer churn** using a machine learning model based on the **Random Forest Classifier**. It includes end-to-end data analysis, model training, and deployment via an interactive web app built with Gradio and hosted on Hugging Face Spaces.
+
+---
+
+## 🌐 Live Web App
+
+👉 [Access the Churn Prediction Web App](https://huggingface.co/spaces/Omkar1872/churn-Prediction-App)
 
 ---
 
 ## 🚀 Project Overview
 
-Customer churn is a major concern in subscription-based businesses. The ability to predict churn allows companies to proactively engage at-risk customers and reduce revenue loss. In this project:
+Customer churn is a major concern for subscription-based businesses. The ability to predict churn enables companies to retain customers and reduce revenue loss. In this project:
 
-- We built a **binary classification model** to predict churn.
-- The data is cleaned, analyzed, and preprocessed.
-- A **Random Forest** model was trained and evaluated.
+- A **binary classification model** was built to predict churn.
+- The dataset was cleaned, analyzed, and preprocessed.
+- A **Random Forest Classifier** was trained and evaluated.
+- The final model was deployed as a web app for real-time predictions.
 
 ---
 
 ## 📊 Dataset Description
-
-The dataset includes the following features:
 
 | Feature             | Description                                          |
 |---------------------|------------------------------------------------------|
 | `Age`               | Age of the customer                                  |
 | `Gender`            | Gender of the customer                               |
 | `Tenure`            | Number of months the customer has stayed             |
-| `Usage Frequency`   | How often the customer uses the product/service      |
+| `Usage Frequency`   | Frequency of product/service usage                   |
 | `Support Calls`     | Number of customer support interactions              |
-| `Payment Delay`     | Number of days delayed in payment                    |
-| `Subscription Type` | Categorical feature representing the plan            |
-| `Contract Length`   | Length of the customer's contract in months          |
-| `Total Spend`       | Total money spent by the customer                    |
-| `Last Interaction`  | Days since the last customer interaction             |
+| `Payment Delay`     | Number of days payment was delayed                   |
+| `Subscription Type` | Type of customer plan                                |
+| `Contract Length`   | Duration of the customer's contract                  |
+| `Total Spend`       | Total amount spent                                   |
+| `Last Interaction`  | Days since last interaction                          |
 | `Churn`             | Target variable (0 = Not churned, 1 = Churned)       |
 
-✅ Class Distribution:  
-- Churn = 0 (Not Churned): **52.63%**  
-- Churn = 1 (Churned): **47.37%**  
-✅ No class imbalance — good for accurate model training.
+✅ **Class Distribution**  
+- Not Churned (0): 52.63%  
+- Churned (1): 47.37%  
+No class imbalance — great for model performance.
 
 ---
 
-## 🛠 Project Workflow
+## 🔧 Project Workflow
 
 ### 1. **Data Loading**
-- The dataset was loaded using `pandas.read_csv()`
+- Loaded with `pandas.read_csv()`
 
 ### 2. **Exploratory Data Analysis (EDA)**
-- Summary statistics using `df.describe()`
-- Value counts and visualizations to understand distributions
+- Summary stats, value counts, visualizations
 
 ### 3. **Data Preprocessing**
-- Missing value handling (if any)
-- Encoding categorical variables (`Gender`, `Subscription Type`)
-- Feature scaling using `StandardScaler` (for numerical features)
-- Train-Test Split (e.g., 80% train, 20% test)
+- Handled missing values  
+- Encoded categorical features (e.g., `Gender`, `Subscription Type`)  
+- Feature scaling using `StandardScaler`  
+- Train-test split (e.g., 80/20)
 
-### 4. **Model Building: Random Forest**
-- Random Forest Classifier from `sklearn.ensemble`
-- Fit on training data
+### 4. **Model Building**
+- Trained a **Random Forest Classifier** using `sklearn.ensemble`
 
 ### 5. **Model Evaluation**
-- Accuracy, confusion matrix, and classification report
-- Feature importance plot
+- Accuracy, confusion matrix, classification report  
+- Feature importance visualization
 
-### 6. **Exporting the Model**
-- Model saved using `joblib.dump()` for reuse in deployment
+### 6. **Model Deployment**
+- Exported model using `joblib`  
+- Built web app with Gradio  
+- Deployed on Hugging Face Spaces
 
 ---
 
@@ -74,17 +79,36 @@ The dataset includes the following features:
 | Training Accuracy  | 100%          |
 | Testing Accuracy   | 99.94%        |
 
-- ✅ High accuracy on both train and test sets
-- ✅ No sign of overfitting
-- ✅ Reliable model due to balanced classes and clean features
-
-### 🔍 Feature Importance
-Feature importance was visualized to understand which features most impact churn.
+✅ High accuracy  
+✅ No overfitting  
+✅ Balanced dataset and effective features
 
 ---
-## Contact & Contributions
 
-I welcome feedback and collaboration.  
+## 🧠 Feature Importance
+
+Feature importance was visualized to understand key drivers of churn. This helps in making actionable business decisions.
+
+---
+
+## 🧪 Tech Stack
+
+- **Python**
+- **Pandas, NumPy, Scikit-learn**
+- **Gradio (for UI)**
+- **Hugging Face Spaces (for deployment)**
+- **Joblib (for model saving)**
+
+---
+
+## 💻 How to Run Locally
+
+```bash
+git clone https://github.com/omkar1872/customer-churn-prediction.git
+cd customer-churn-prediction
+pip install -r requirements.txt
+python app.py
+
 Feel free to connect:
 
 - GitHub: [https://github.com/omkar1872](https://github.com/omkar1872)  
